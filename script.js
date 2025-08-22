@@ -104,6 +104,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Pricing Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const priceAmounts = document.querySelectorAll('.price-amount:not(.custom)');
+    const pricePeriods = document.querySelectorAll('.price-period');
+    
+    // Pricing data
+    const pricingData = {
+        monthly: {
+            basic: 297,
+            pro: 497
+        },
+        yearly: {
+            basic: 2970,
+            pro: 4970
+        }
+    };
+    
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get selected period
+            const period = this.dataset.period;
+            
+            // Update prices
+            priceAmounts.forEach(amount => {
+                const planType = amount.closest('.pricing-card').classList.contains('basic') ? 'basic' : 'pro';
+                const newPrice = pricingData[period][planType];
+                
+                if (amount.textContent.includes('$')) {
+                    amount.textContent = `$${newPrice}`;
+                }
+            });
+            
+            // Update period text
+            pricePeriods.forEach(periodText => {
+                periodText.textContent = period === 'monthly' ? '/ mo' : '/ year';
+            });
+        });
+    });
+});
+
+// Header scroll effect
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
+});
+
 // Active navigation link highlighting
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
@@ -326,3 +386,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// FAQ Toggle Functionality
+function toggleFaq(questionElement) {
+    const faqItem = questionElement.closest('.faq-item');
+    const icon = questionElement.querySelector('.faq-icon i');
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+            const itemIcon = item.querySelector('.faq-icon i');
+            itemIcon.className = 'fa-solid fa-plus';
+        }
+    });
+    
+    // Toggle current item
+    if (isActive) {
+        // If already active, close it
+        faqItem.classList.remove('active');
+        icon.className = 'fa-solid fa-plus';
+    } else {
+        // If not active, open it
+        faqItem.classList.add('active');
+        icon.className = 'fa-solid fa-minus';
+    }
+}
+
+// FAQ click event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            toggleFaq(this);
+        });
+    });
+});
