@@ -161,13 +161,13 @@
 
 .hero-description {
     color: #717680;
-text-align: center;
-font-family: Inter;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px;
-max-width: 684px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    max-width: 684px;
 }
 
 .hero-buttons {
@@ -178,15 +178,15 @@ max-width: 684px;
 
 .loved-by-teams {
     color: #101F56;
-text-align: center;
-font-family: Inter;
-font-size: 14px;
-font-style: normal;
-font-weight: 600;
-line-height: 16.8px; 
-text-transform: uppercase;
-margin-top: 32px;
-margin-bottom: 16px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-transform: uppercase;
+    margin-top: 32px;
+    margin-bottom: 16px;
 }
 
 .clients-slider-container {
@@ -218,7 +218,7 @@ margin-bottom: 16px;
     margin-bottom: 100px;
 }
 
-.insights-section{
+.insights-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,7 +234,7 @@ margin-bottom: 16px;
     font-size: 60px;
     font-style: normal;
     font-weight: 500;
-    line-height: 66px; 
+    line-height: 66px;
     letter-spacing: -3px;
     text-transform: capitalize;
 }
@@ -245,13 +245,13 @@ margin-bottom: 16px;
 
 .insights-description {
     color: #717680;
-text-align: center;
-font-family: Inter;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 30px; 
-max-width: 834px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    max-width: 834px;
 }
 
 .insights-tabs {
@@ -281,28 +281,28 @@ max-width: 834px;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 19.2px; 
+    line-height: 19.2px;
     letter-spacing: -0.64px;
 }
 
 .video-img-resize {
-margin-bottom: 44px;
+    margin-bottom: 44px;
 }
 
 .insights-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 .insights-value {
     color: #203FAE;
-font-family: Inter;
-font-size: 56px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -1.12px;
+    font-family: Inter;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.12px;
 }
 
 .insights-card {
@@ -321,10 +321,10 @@ letter-spacing: -1.12px;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 28px; 
+    line-height: 28px;
 }
 
-.powerfull-database-section{
+.powerfull-database-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,15 +333,172 @@ letter-spacing: -1.12px;
     margin-top: 140px;
 }
 
-.features-description{
+.features-description {
     color: #717680;
-text-align: center;
-font-family: Inter;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 30px; 
-max-width: 900px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    max-width: 900px;
+    margin-bottom: 60px;
+}
+
+.features-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 100px;
+}
+
+.features-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    max-width: 370px;
+}
+
+.features-card-text {
+    color: #101F56;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28.8px;
+    letter-spacing: -1.2px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.features-card-description {
+    color: #717680;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.success-stories-text {
+    color: #101F56;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 66px;
+    letter-spacing: -3px;
+    text-transform: capitalize;
+}
+
+.success-stories-text span {
+    color: #203FAE;
+}
+
+.success-stories-description {
+    color: #717680;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    max-width: 510px;
+    display: flex;
+    margin-top: 0px;
+}
+
+.success-stories-section2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.group-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+}
+
+.success-stories-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.success-stories-card {
+    border-radius: 16px;
+    border: 2px solid #E9EAEB;
+    background: #FFF;
+    padding: 28px;
+    max-width: 510px;
+
+}
+
+.success-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.success-card-text {
+    color: #171717;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.success-card-name {
+    color: #101F56;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21.6px;
+    letter-spacing: -0.72px;
+}
+
+.success-card-position {
+    color: #717680;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.success-card-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.success-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 70px;
+}
+
+.success-stories-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sub-insights-section-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 44px;
 }
 
 @media (max-width: 768px) {
@@ -420,7 +577,7 @@ max-width: 900px;
         margin-top: 56px;
         margin-bottom: 56px;
     }
-    
+
     .content-img-resize {
         width: 370px;
     }
@@ -430,13 +587,13 @@ max-width: 900px;
     }
 
     .insights-text {
-font-size: 32px;
-letter-spacing: -0.69px;
+        font-size: 32px;
+        letter-spacing: -0.69px;
     }
 
     .insights-description {
-    font-size: 16px;
-    line-height: 24px; 
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .insights-tabs {
@@ -459,4 +616,62 @@ letter-spacing: -0.69px;
         letter-spacing: -0.64px;
     }
 
+    .features-description {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+
+    .features-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+        margin-bottom: 0px;
+    }
+
+    .features-card {
+        padding: 0px;
+    }
+
+    .success-stories-text {
+        font-size: 32px;
+        letter-spacing: -0.69px;
+    }
+
+    .success-stories-section2 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+
+    .success-stories-text {
+        line-height: 48px;
+    }
+
+    .success-stories-last-child {
+        margin-bottom: 56px;
+    }
+
+    .success-stories-section {
+        margin-top: 56px;
+        margin-bottom: 56px;
+    }
+
+    .success-stories-description {
+        margin-top: 24px;
+    }
+
+    .success-stories-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .success-card-footer {
+        margin-top: 24px;
+    }
+
+    .sub-insights-section-header{
+        margin-bottom: 40px;
+    }
 }
