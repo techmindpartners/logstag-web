@@ -651,22 +651,24 @@ body *{
 .pricing-toggle {
   display: flex;
   align-items: center;
-  background: #f8f9fa;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 4px;
   margin-bottom: 48px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #e5e5e5;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .toggle-btn {
   padding: 12px 24px;
   border: none;
   background: transparent;
-  border-radius: 50px;
+  border-radius: 6px;
   font-family: Inter;
   font-size: 14px;
-  font-weight: 600;
-  color: #6c757d;
+  font-weight: 500;
+  color: #666666;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 100px;
@@ -675,7 +677,7 @@ body *{
 .toggle-btn.active {
   background: #203fae;
   color: white;
-  box-shadow: 0 2px 8px rgba(32, 63, 174, 0.3);
+  box-shadow: none;
 }
 
 .toggle-btn:hover:not(.active) {
@@ -805,7 +807,7 @@ body *{
 }
 
 .price-amount.custom {
-  color: #203fae;
+  color: #101F56;
   font-size: 32px;
 }
 
@@ -851,7 +853,7 @@ body *{
 
 .basic-btn {
   background: white;
-  color: #203fae;
+  color: #101F56;
   border: 2px solid #e9ecef;
 }
 
@@ -862,7 +864,7 @@ body *{
 
 .pro-btn {
   background: white;
-  color: #203fae;
+  color: #101F56;
 }
 
 .pro-btn:hover {
@@ -871,7 +873,7 @@ body *{
 
 .enterprise-btn {
   background: white;
-  color: #203fae;
+  color: #101F56;
   border: 2px solid #e9ecef;
 }
 
