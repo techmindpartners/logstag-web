@@ -1,5 +1,21 @@
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body *{
@@ -9,6 +25,8 @@ body *{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -20,6 +38,12 @@ body *{
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid #d5d7da;
+  width: 100%;
+  box-sizing: border-box;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .navbar {
@@ -32,6 +56,8 @@ body *{
   align-items: center;
   justify-content: space-between;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-brand {
@@ -49,6 +75,8 @@ body *{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  width: auto;
+  max-width: calc(100% - 200px);
 }
 
 .nav-list {
@@ -297,9 +325,6 @@ body *{
   letter-spacing: -0.64px;
 }
 
-.video-img-resize {
-  margin-bottom: 44px;
-}
 
 .insights-cards {
   display: grid;
@@ -1019,6 +1044,64 @@ body *{
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
+    max-width: 100%;
+  }
+  
+  /* Mobile Navigation */
+  .nav-menu {
+    position: static;
+    transform: none;
+    left: auto;
+    max-width: none;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+  }
+  
+  .nav-buttons {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  
+  .navbar .container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  /* Mobile Header Fix */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    will-change: transform !important;
+    -webkit-perspective: 1000 !important;
+    perspective: 1000 !important;
+  }
+  
+  .nav-brand {
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .nav-login, .nav-book {
+    padding: 6px 12px;
+    font-size: 14px;
   }
 
   /* Mobile Pricing Styles */
@@ -1088,6 +1171,37 @@ body *{
       padding: 8px 16px;
       font-size: 12px;
       min-width: 70px;
+    }
+    
+  /* Extra small screens */
+  .container {
+    padding: 0 12px;
+  }
+  
+  /* Mobile Header Stability */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+    
+    .action-tab-content {
+      width: 98%;
+      padding: 12px;
+      max-height: 250px;
+    }
+    
+    .nav-list {
+      gap: 8px;
+    }
+    
+    .nav-link {
+      font-size: 12px;
     }
 
     .pricing-card {
@@ -1229,7 +1343,6 @@ body *{
 
   .video-img-resize {
     width: 370px;
-    margin-bottom: 16px;
   }
 
   .insights-cards {
@@ -1776,12 +1889,24 @@ body *{
   position: relative;
   display: flex;
   justify-content: center;
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 20px;
+  width: 80%;
+  max-height: 400px;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.action-tab-content::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 .action-tab-content .video-img-resize {
   display: none;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: max-content;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -1796,6 +1921,16 @@ body *{
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
+/* Scroll Animation */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30%);
+  }
+}
+
 /* Responsive Design for Contact */
 @media (max-width: 768px) {
   .contact-content {
@@ -1805,5 +1940,24 @@ body *{
   
   .contact-form-container {
     padding: 24px;
+  }
+  
+  /* Mobile Action Tab Content */
+  .action-tab-content {
+    width: 95%;
+    padding: 16px;
+    max-height: 300px;
+  }
+  
+  .pricing-toggle {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .toggle-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: auto;
   }
 }

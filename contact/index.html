@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Contact - Logstag</title>
     <meta name="description" content="Get in touch with our team. We're here to help you with your database monitoring needs.">
 
@@ -35,9 +35,10 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
+                        <li><a href="../#insights" class="nav-link">Insights</a></li>
                         <li><a href="../#features" class="nav-link">Features</a></li>
-                        <li><a href="../pricing" class="nav-link">Pricing</a></li>
                         <li><a href="../#faq" class="nav-link">FAQ</a></li>
+                        <li><a href="../pricing" class="nav-link">Pricing</a></li>
                         <li><a href="../contact" class="nav-link active">Contact</a></li>
                     </ul>
                 </nav>
@@ -130,9 +131,10 @@
 
             <!-- Navigation Links -->
             <nav class="footer-nav">
+                <a href="../#insights">Insights</a>
                 <a href="../#features">Features</a>
-                <a href="../pricing">Pricing</a>
                 <a href="../#faq">FAQ</a>
+                <a href="../pricing">Pricing</a>
                 <a href="../contact">Contact</a>
             </nav>
 
@@ -154,6 +156,75 @@
 
     <!-- JavaScript -->
     <script src="../script.js"></script>
+    <script>
+        // Contact Form with Brevo Integration
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.querySelector('.contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = contactForm.querySelector('.form-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    // Show loading state
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const formData = new FormData(contactForm);
+                        const data = {
+                            name: formData.get('name'),
+                            email: formData.get('email'),
+                            message: formData.get('message')
+                        };
+                        
+                        // Send via Formspree (temporary solution until backend is ready)
+                        const response = await fetch('https://formspree.io/f/xdknkpvp', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: data.name,
+                                email: data.email,
+                                message: data.message,
+                                _subject: "New Contact Form Submission - Logstag"
+                            })
+                        });
+                        
+                        if (response.ok) {
+                            // Success
+                            submitBtn.textContent = 'Message Sent!';
+                            submitBtn.style.backgroundColor = '#28a745';
+                            contactForm.reset();
+                            
+                            // Reset button after 3 seconds
+                            setTimeout(() => {
+                                submitBtn.textContent = originalText;
+                                submitBtn.style.backgroundColor = '';
+                                submitBtn.disabled = false;
+                            }, 3000);
+                        } else {
+                            throw new Error('Failed to send message');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        submitBtn.textContent = 'Error - Try Again';
+                        submitBtn.style.backgroundColor = '#dc3545';
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.style.backgroundColor = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
