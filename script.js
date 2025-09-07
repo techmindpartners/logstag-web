@@ -423,3 +423,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Action Tabs Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const actionToggleBtns = document.querySelectorAll('.pricing-toggle .toggle-btn[data-tab]');
+    const actionImages = document.querySelectorAll('.action-tab-content .video-img-resize');
+    
+    actionToggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            actionToggleBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get selected tab
+            const selectedTab = this.dataset.tab;
+            
+            // Hide all images
+            actionImages.forEach(img => {
+                img.classList.remove('active');
+            });
+            
+            // Show selected image
+            const selectedImage = document.querySelector(`.action-tab-content .video-img-resize[data-tab="${selectedTab}"]`);
+            if (selectedImage) {
+                selectedImage.classList.add('active');
+            }
+        });
+    });
+});

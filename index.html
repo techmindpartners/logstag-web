@@ -25,14 +25,17 @@
         <div class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="assets/logo.svg" alt="Lagstag" class="logo-img">
+                    <a href=".">
+                        <img src="assets/logo.svg" alt="Logstag" class="logo-img">
+                    </a>
                 </div>
 
                 <nav class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
                         <li><a href="#features" class="nav-link">Features</a></li>
-                        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                        <li><a href="pricing" class="nav-link">Pricing</a></li>
                         <li><a href="#faq" class="nav-link">FAQ</a></li>
+                        <li><a href="contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -64,6 +67,7 @@
     </div>
 
     <!-- Loved by Teams -->
+    <!--
     <div class="loved-by-teams">Loved by teams around the world</div>
     <div class="clients-slider-container">
         <div class="clients-slider">
@@ -84,8 +88,9 @@
             </div>
         </div>
     </div>
+    -->
     <div class="content">
-        <img src="assets/content-section.svg" alt="Content" class="content-img-resize">
+        <img src="assets/content-section.png" alt="Content" class="content-img-resize">
     </div>
 
     <!-- Insights -->
@@ -95,39 +100,39 @@
         <span class="insights-description">Experience the power of modern database monitoring with our intelligent
             dashboards and real-time insights that transform how you manage your data infrastructure.</span>
 
-        <!-- Insights Tabs -->
-        <div class="insights-tabs">
-            <div class="insights-active-tab">
-                <span class="insights-tab-text">Real-time Dashboard</span>
-            </div>
-            <div class="insights-tab">
-                <span class="insights-tab-text">Query Analytics</span>
-            </div>
-            <div class="insights-tab">
-                <span class="insights-tab-text">Smart Alerts</span>
-            </div>
-            <div class="insights-tab">
-                <span class="insights-tab-text">AI Insights</span>
-            </div>
+        <!-- Action Tabs -->
+        <div class="pricing-toggle">
+            <button class="toggle-btn active" data-tab="monitoring">Continuous Monitoring</button>
+            <button class="toggle-btn" data-tab="maps">Database Maps Made Simple</button>
+            <button class="toggle-btn" data-tab="alerts">Smarter Alerts</button>
+            <button class="toggle-btn" data-tab="decisions">Turn Data into Decisions</button>
+            <button class="toggle-btn" data-tab="integrations">Seamless Integrations</button>
         </div>
 
-        <img src="assets/video-img.png" alt="Video" class="video-img-resize">
+        <!-- Tab Content Images -->
+        <div class="action-tab-content">
+            <img src="assets/video-img.png" alt="Continuous Monitoring" class="video-img-resize active" data-tab="monitoring">
+            <img src="assets/analytics.svg" alt="Database Maps Made Simple" class="video-img-resize" data-tab="maps">
+            <img src="assets/alerts.svg" alt="Smarter Alerts" class="video-img-resize" data-tab="alerts">
+            <img src="assets/dashboard.png" alt="Turn Data into Decisions" class="video-img-resize" data-tab="decisions">
+            <img src="assets/monitoring.svg" alt="Seamless Integrations" class="video-img-resize" data-tab="integrations">
+        </div>
         <div class="insights-cards container">
             <div class="insights-card">
-                <span class="insights-value">99.9%</span>
-                <span class="insights-key">Accuracy</span>
+                <span class="insights-value">1,247</span>
+                <span class="insights-key">Monitored Instances</span>
             </div>
             <div class="insights-card">
-                <span class="insights-value">50ms</span>
-                <span class="insights-key">Latency</span>
+                <span class="insights-value">2.4M</span>
+                <span class="insights-key">Metrics Collected per Day</span>
             </div>
             <div class="insights-card">
-                <span class="insights-value">24/7</span>
-                <span class="insights-key">Monitoring</span>
+                <span class="insights-value">156</span>
+                <span class="insights-key">Databases Monitored</span>
             </div>
             <div class="insights-card">
-                <span class="insights-value">24+</span>
-                <span class="insights-key">DB Engines</span>
+                <span class="insights-value">89</span>
+                <span class="insights-key">Incidents Prevented</span>
             </div>
         </div>
     </div>
@@ -141,44 +146,61 @@
         <div class="features-cards container">
             <div class="features-card">
                 <img src="assets/monitoring.svg" alt="Monitoring">
-                <span class="features-card-text">Real-time Monitoring</span>
-                <span class="features-card-description">Monitor database performance metrics in real-time with
-                    customizable dashboards and instant alerts when issues arise.</span>
+                <span class="features-card-text">Always-On Observability</span>
+                <span class="features-card-subtitle">A Live View of Your Database Health.</span>
+                <span class="features-card-description">Stay updated with continuous snapshots of system behavior. See when things begin to drift —
+                    not when they break — and keep performance on track with effortless visibility.</span>
             </div>
             <div class="features-card">
                 <img src="assets/analytics.svg" alt="Analytics">
-                <span class="features-card-text">Intelligent Analytics</span>
-                <span class="features-card-description">Advanced analytics and machine learning algorithms to identify
-                    performance bottlenecks and optimization opportunities.</span>
+                <span class="features-card-text">AI-Powered Insights</span>
+                <span class="features-card-subtitle">Understand the Why, Not Just the What.</span>
+                <span class="features-card-description">Go beyond raw metrics. Our platform connects the dots across usage patterns, behaviors, and
+                    misconfigurations to surface meaningful insights and clear recommendations.</span>
             </div>
             <div class="features-card">
                 <img src="assets/support.svg" alt="Support">
-                <span class="features-card-text">Multi-Engine Support</span>
-                <span class="features-card-description">Support for PostgreSQL, MySQL, MongoDB, Redis, and more. Monitor
-                    all your databases from a single platform.</span>
+                <span class="features-card-text">Any Database. One Platform.</span>
+                <span class="features-card-subtitle">One Platform, Many Technologies.</span>
+                <span class="features-card-description">Manage all your environments — no matter MS SQL Server, PostgreSQL, MongoDB or Oracle
+                    Database — from a single screen. No context switching, no learning curve, just complete
+                    observability across your systems.</span>
             </div>
             <div class="features-card">
                 <img src="assets/alerts.svg" alt="Alerts">
                 <span class="features-card-text">Smart Alerts</span>
-                <span class="features-card-description">Proactive alerting system with customizable thresholds and
-                    integration with popular notification platforms.</span>
+                <span class="features-card-subtitle">Know What Matters, Ignore What Doesn't.</span>
+                <span class="features-card-description">We don't just alert on thresholds — we prioritize based on risk and context. You get clear,
+                    relevant alerts that help you act fast without drowning in noise.</span>
             </div>
             <div class="features-card">
                 <img src="assets/analysis.svg" alt="Analysis">
-                <span class="features-card-text">Query Analysis</span>
-                <span class="features-card-description">Deep dive into slow queries, execution plans, and query
-                    optimization recommendations to improve performance.</span>
+                <span class="features-card-text">Comprehensive Reporting</span>
+                <span class="features-card-subtitle">Find the Lag Behind the Load.</span>
+                <span class="features-card-description">Quickly spot queries causing drag, delay, or drain on your resources. Understand performance
+                    bottlenecks and get suggestions to fix them — without endless digging.</span>
             </div>
             <div class="features-card success-stories-last-child">
                 <img src="assets/security.svg" alt="Security">
                 <span class="features-card-text">Security & Compliance</span>
-                <span class="features-card-description">Enterprise-grade security with encryption, audit logs, and
-                    compliance reporting for regulated industries.</span>
+                <span class="features-card-subtitle">Stay Secure. Stay Aligned.</span>
+                <span class="features-card-description">Continuously evaluate your environment's security posture and configuration health. Detect
+                    weak spots, missteps, or drift from best practices — early and clearly.</span>
             </div>
+            <!--
+            <div class="features-card success-stories-last-child">
+                <img src="assets/dashboard.png" alt="Dashboard">
+                <span class="features-card-text">Resource & Asset Visibility</span>
+                <span class="features-card-subtitle">Full Transparency Across Your Database Landscape.</span>
+                <span class="features-card-description">Get a unified overview of all database assets — where they run, who owns them, and how they
+                    impact cost and risk. Simplify audits and strengthen governance.</span>
+            </div>
+            -->
         </div>
     </div>
 
     <!-- Success stories -->
+    <!--
     <div id="about" class="success-stories-section container">
         <div class="success-stories-section2 ">
             <div class="group-section">
@@ -198,9 +220,9 @@
                     <img src="assets/logo1.svg" alt="Logo">
                     <img src="assets/denden.svg" alt="Quote">
                 </div>
-                <div class="success-card-text">“Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
+                <div class="success-card-text">"Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
                     maecenas orci. Suspendisse consequat cursus eget purus augue auctor arcu tincidunt. Ut viverra amet
-                    metus consequat urna vitae. Pretium nisl purus donec nullam sed.”</div>
+                    metus consequat urna vitae. Pretium nisl purus donec nullam sed."</div>
                 <div class="success-card-footer">
                     <img src="assets/mark.svg" alt="Mark">
                     <div class="success-card-footer-text">
@@ -214,9 +236,9 @@
                     <img src="assets/logo2.svg" alt="Logo">
                     <img src="assets/denden.svg" alt="Quote">
                 </div>
-                <div class="success-card-text">“Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
+                <div class="success-card-text">"Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
                     maecenas orci. Suspendisse consequat cursus eget purus augue auctor arcu tincidunt. Ut viverra amet
-                    metus consequat urna vitae. Pretium nisl purus donec nullam sed.”</div>
+                    metus consequat urna vitae. Pretium nisl purus donec nullam sed."</div>
                 <div class="success-card-footer">
                     <img src="assets/emily.svg" alt="Mark">
                     <div class="success-card-footer-text">
@@ -230,9 +252,9 @@
                     <img src="assets/logo3.svg" alt="Logo">
                     <img src="assets/denden.svg" alt="Quote">
                 </div>
-                <div class="success-card-text">“Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
+                <div class="success-card-text">"Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
                     maecenas orci. Suspendisse consequat cursus eget purus augue auctor arcu tincidunt. Ut viverra amet
-                    metus consequat urna vitae. Pretium nisl purus donec nullam sed.”</div>
+                    metus consequat urna vitae. Pretium nisl purus donec nullam sed."</div>
                 <div class="success-card-footer">
                     <img src="assets/sophia.svg" alt="Mark">
                     <div class="success-card-footer-text">
@@ -246,9 +268,9 @@
                     <img src="assets/logo4.svg" alt="Logo">
                     <img src="assets/denden.svg" alt="Quote">
                 </div>
-                <div class="success-card-text">“Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
+                <div class="success-card-text">"Lorem ipsum dolor sit amet consectetur. Massa gravida egestas nibh
                     maecenas orci. Suspendisse consequat cursus eget purus augue auctor arcu tincidunt. Ut viverra amet
-                    metus consequat urna vitae. Pretium nisl purus donec nullam sed.”</div>
+                    metus consequat urna vitae. Pretium nisl purus donec nullam sed."</div>
                 <div class="success-card-footer">
                     <img src="assets/jason.svg" alt="Mark">
                     <div class="success-card-footer-text">
@@ -259,8 +281,10 @@
             </div>
         </div>
     </div>
+    -->
 
     <!-- Sub Insights -->
+    <!--
     <div class="sub-insights-section container">
         <div class="sub-insights-section-header">
             <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>Insights</span></div>
@@ -301,112 +325,7 @@
             </div>
         </div>
     </div>
-    <!-- Pricing -->
-    <div id="pricing" class="pricing-section container">
-        <div class="pricing-section-header">
-            <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>PRICING</span></div>
-            <span class="insights-text">Explore Our<span> Pricing</span></span>
-            <span class="insights-description">Choose the plan that fits your needs. No hidden fees, cancel
-                anytime.</span>
-        </div>
-        <div class="pricing-toggle">
-            <button class="toggle-btn active" data-period="monthly">Monthly</button>
-            <button class="toggle-btn" data-period="yearly">Yearly</button>
-        </div>
-
-        <div class="pricing-cards">
-            <div class="pricing-card basic">
-                <div class="card-header">
-                    <div class="plan-header-top">
-                        <div class="plan-icon">
-                            <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
-                        </div>
-                        <h3 class="plan-title">Basic</h3>
-                    </div>
-                    <p class="plan-subtitle">Best for personal use.</p>
-                </div>
-
-                <div class="card-price">
-                    <span class="price-amount">$297</span>
-                    <span class="price-period">/ mo</span>
-                </div>
-
-                <p class="price-note">Pause or cancel anytime.</p>
-
-                <button class="card-btn basic-btn">Book a Demo</button>
-
-                <ul class="plan-features">
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-times"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-times"></i>Lorem ipsum dolor sit amet</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card pro featured">
-                <div class="popular-badge">
-                    🔥
-                    <span>MOST POPULAR</span>
-                </div>
-
-                <div class="card-header">
-                    <div class="plan-header-top">
-                        <div class="plan-icon">
-                            <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
-                        </div>
-                        <h3 class="plan-title">Pro</h3>
-                    </div>
-                    <p class="plan-subtitle">Best for start-ups.</p>
-                </div>
-
-                <div class="card-price">
-                    <span class="price-amount">$497</span>
-                    <span class="price-period">/ mo</span>
-                </div>
-
-                <p class="price-note">Pause or cancel anytime.</p>
-
-                <button class="card-btn pro-btn">Book a Demo</button>
-
-                <ul class="plan-features">
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card enterprise" style="background: #F5F5F5;">
-                <div class="card-header">
-                    <div class="plan-header-top">
-                        <div class="plan-icon">
-                            <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
-                        </div>
-                        <h3 class="plan-title">Enterprise</h3>
-                    </div>
-                    <p class="plan-subtitle">Best for enterprise business.</p>
-                </div>
-
-                <div class="card-price">
-                    <span class="price-amount custom">Custom</span>
-                </div>
-
-                <p class="price-note">Get in touch for details.</p>
-
-                <button class="card-btn enterprise-btn">Contact Sales Team</button>
-
-                <ul class="plan-features">
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    -->
     <!-- Faq -->
     <div id="faq" class="faq-section container">
         <div class="faq-section-header">
@@ -528,8 +447,9 @@
             <!-- Navigation Links -->
             <nav class="footer-nav">
                 <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
+                <a href="pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
+                <a href="contact">Contact</a>
             </nav>
 
             <!-- Separator -->
