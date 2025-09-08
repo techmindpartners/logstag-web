@@ -453,3 +453,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Calendly Widget and Scroll Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Calendly widget immediately
+    const initCalendly = () => {
+        if (window.Calendly) {
+            Calendly.initInlineWidget({
+                url: 'https://calendly.com/hello-logstag/30min',
+                parentElement: document.querySelector('.calendly-widget')
+            });
+        } else {
+            // If Calendly is not loaded yet, wait a bit and try again
+            setTimeout(initCalendly, 100);
+        }
+    };
+    
+    // Start initializing Calendly immediately
+    initCalendly();
+    
+    // Header Book a Demo button scroll to database section
+    const headerBookDemoBtn = document.querySelector('.navbar .nav-book');
+    if (headerBookDemoBtn) {
+        headerBookDemoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const databaseSection = document.querySelector('.database-section');
+            if (databaseSection) {
+                databaseSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+});

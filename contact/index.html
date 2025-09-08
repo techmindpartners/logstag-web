@@ -44,7 +44,6 @@
                 </nav>
 
                 <div class="nav-buttons">
-                    <button class="nav-login">Log In</button>
                     <button class="nav-book">Book a Demo</button>
                 </div>
 
@@ -71,48 +70,51 @@
         <!-- Contact Section -->
         <div class="contact-section container">
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3 class="contact-title">Contact</h3>
-                        <p class="contact-description">Get in touch with us for support, sales inquiries, or general questions.</p>
-                        <div class="contact-details">
-                            <p class="contact-address">Meydan Grandstand, 6th floor,<br>Meydan Road, Nad Al Sheba,<br>Dubai, U.A.E</p>
-                            <a href="mailto:hello@logstag.com" class="contact-link">hello@logstag.com</a>
-                        </div>
-                    </div>
-
-
+                <div class="contact-left">
                     <div class="contact-card">
                         <h3 class="contact-title">Book a Demo</h3>
                         <p class="contact-description">Schedule a personalized demo to see Logstag in action.</p>
-                        <button class="contact-btn">Schedule Demo</button>
+                        <div class="calendly-widget" data-url="https://calendly.com/hello-logstag/30min"></div>
                     </div>
                 </div>
 
-                <div class="contact-form-container">
-                    <div class="contact-form-header">
-                        <h3 class="form-title">Send us a message</h3>
-                        <p class="form-description">Fill out the form below and we'll get back to you as soon as possible.</p>
+                <div class="contact-right">
+                    <div class="contact-info-card">
+                        <div class="contact-card">
+                            <h3 class="contact-title">Contact</h3>
+                            <p class="contact-description">Get in touch with us for support, sales inquiries, or general questions.</p>
+                            <div class="contact-details">
+                                <p class="contact-address">Meydan Grandstand, 6th floor,<br>Meydan Road, Nad Al Sheba,<br>Dubai, U.A.E</p>
+                                <a href="mailto:hello@logstag.com" class="contact-link">hello@logstag.com</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
+                    <div class="contact-form-container">
+                        <div class="contact-form-header">
+                            <h3 class="form-title">Send us a message</h3>
+                            <p class="form-description">Fill out the form below and we'll get back to you as soon as possible.</p>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us how we can help you..." required></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
 
-                        <button type="submit" class="form-submit">Send Message</button>
-                    </form>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,6 +138,7 @@
                 <a href="../#faq">FAQ</a>
                 <a href="../pricing">Pricing</a>
                 <a href="../contact">Contact</a>
+                <a href="https://app.logstag.com" class="footer-login" target="_blank">Log In</a>
             </nav>
 
             <!-- Separator -->
@@ -155,6 +158,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://assets.calendly.com/assets/external/widget.js"></script>
     <script src="../script.js"></script>
     <script>
         // Contact Form with Brevo Integration
@@ -224,6 +228,20 @@
                 });
             }
         });
+
+        // Initialize Calendly widget for contact page
+        const initCalendly = () => {
+            if (window.Calendly) {
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/hello-logstag/30min',
+                    parentElement: document.querySelector('.calendly-widget')
+                });
+            } else {
+                setTimeout(initCalendly, 100);
+            }
+        };
+        
+        initCalendly();
     </script>
 </body>
 
