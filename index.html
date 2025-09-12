@@ -32,16 +32,14 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
-                        <li><a href="#insights" class="nav-link">Insights</a></li>
-                        <li><a href="#features" class="nav-link">Features</a></li>
-                        <li><a href="#faq" class="nav-link">FAQ</a></li>
-                        <li><a href="pricing" class="nav-link">Pricing</a></li>
-                        <li><a href="contact" class="nav-link">Contact</a></li>
+                        <li><a href="faq/" class="nav-link">FAQ</a></li>
+                        <li><a href="pricing/" class="nav-link">Pricing</a></li>
+                        <li><a href="contact/" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <button class="nav-book">Book a Demo</button>
+                    <a href="contact/" class="nav-book">Book a Demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -54,11 +52,10 @@
     </header>
     <!-- Hero Section -->
     <div class="container hero-section">
-        <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>POWERING THE NEXT BIG THING</span></div>
         <div class="hero-text">
             Monitor Your Database <br> Performance Like <span>Never Before</span>.
         </div>
-        <div class="hero-description">Real-time insights, powerful analytics, and proactive alerts for multiple database
+        <div class="hero-description"><span style="color: #203fae; font-weight: 600;">AI Powered</span> actionable insights, powerful analytics, and proactive alerts for multiple database
             engines. Optimize performance and prevent issues before they impact your users.</div>
     </div>
 
@@ -88,10 +85,28 @@
     <div class="content">
         <img src="assets/content-section.png" alt="Content" class="content-img-resize">
     </div>
+        <!-- Insights Cards -->
+        <div class="insights-cards container">
+            <div class="insights-card">
+                <span class="insights-value">42</span>
+                <span class="insights-key">Monitored Instances</span>
+            </div>
+            <div class="insights-card">
+                <span class="insights-value">1.2M</span>
+                <span class="insights-key">Metrics Collected per Day</span>
+            </div>
+            <div class="insights-card">
+                <span class="insights-value">168</span>
+                <span class="insights-key">Databases Monitored</span>
+            </div>
+            <div class="insights-card">
+                <span class="insights-value">47</span>
+                <span class="insights-key">Incidents Prevented</span>
+            </div>
+        </div>
 
-    <!-- Insights -->
-    <div id="insights" class="insights-section">
-        <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>Insights</span></div>
+    <!-- Overview -->
+    <div id="overview" class="insights-section">
         <span class="insights-text">See Logstag in <span>Action</span></span>
         <span class="insights-description">Experience the power of modern database monitoring with our intelligent
             dashboards and real-time insights that transform how you manage your data infrastructure.</span>
@@ -113,29 +128,12 @@
             <img src="assets/see-in-action/turn-data-into-decisions.png" alt="Turn Data into Decisions" class="video-img-resize" data-tab="decisions">
             <img src="assets/see-in-action/seamless-integrations.png" alt="Seamless Integrations" class="video-img-resize" data-tab="integrations">
         </div>
-        <div class="insights-cards container">
-            <div class="insights-card">
-                <span class="insights-value">42</span>
-                <span class="insights-key">Monitored Instances</span>
-            </div>
-            <div class="insights-card">
-                <span class="insights-value">1.2M</span>
-                <span class="insights-key">Metrics Collected per Day</span>
-            </div>
-            <div class="insights-card">
-                <span class="insights-value">168</span>
-                <span class="insights-key">Databases Monitored</span>
-            </div>
-            <div class="insights-card">
-                <span class="insights-value">47</span>
-                <span class="insights-key">Incidents Prevented</span>
-            </div>
-        </div>
     </div>
+
+
 
     <!-- FEATURES -->
     <div id="features" class="powerfull-database-section">
-        <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>FEATURES</span></div>
         <span class="insights-text">Powerful Database <br> Monitoring <span>Features</span>.</span>
         <span class="features-description">A comprehensive monitoring ecosystem with interconnected components that work
             together to provide complete visibility into your database infrastructure performance and health.</span>
@@ -200,7 +198,6 @@
     <div id="about" class="success-stories-section container">
         <div class="success-stories-section2 ">
             <div class="group-section">
-                <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>SUCCESS STORIES</span></div>
                 <span class="success-stories-text">See What <br>Our <span>Users</span> Say.</span>
             </div>
             <div class="group-section">
@@ -283,7 +280,6 @@
     <!--
     <div class="sub-insights-section container">
         <div class="sub-insights-section-header">
-            <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>Insights</span></div>
             <span class="insights-text">Trusted by<span> Industry Leaders.</span></span>
             <span class="insights-description">Our platform delivers exceptional performance and reliability that teams
                 depend on.</span>
@@ -325,7 +321,6 @@
     <!-- Faq -->
     <div id="faq" class="faq-section container">
         <div class="faq-section-header">
-            <div class="tag"> <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>FAQ</span></div>
             <span class="insights-text">Frequently asked<span> questions</span></span>
             <span class="insights-description">Everything you need to know about Logstag database monitoring.</span>
         </div>
@@ -378,164 +373,14 @@
                     Installation typically takes 5-10 minutes. Once the agent is installed and configured with your database credentials, you can start monitoring your databases.
                 </div>
             </div>
-
-            <!-- Agent Installation & Setup -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What are the system requirements?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent requires minimal resources: 512MB RAM, 1GB disk space, and network connectivity to your database and our monitoring service.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>Does the agent require internet connectivity?</span>
-                </div>
-                <div class="faq-answer">
-                    Yes, the agent needs outbound HTTPS connectivity to transmit monitoring data to the Logstag service. No inbound connections to your infrastructure are required.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>Can I monitor multiple databases with one agent?</span>
-                </div>
-                <div class="faq-answer">
-                    Yes, a single agent installation can monitor multiple databases on the same server.
-                </div>
-            </div>
-
-            <!-- Agent Security -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What database privileges does the agent require?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent requires minimal read-only permissions to system views and metadata. For SQL Server, this means VIEW SERVER STATE and VIEW DATABASE STATE permissions, plus access to Query Store views if enabled. For PostgreSQL, the agent needs pg_monitor role membership or pg_read_all_stats permissions. No administrative or write permissions are required.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>How is my data transmitted securely?</span>
-                </div>
-                <div class="faq-answer">
-                    All data is transmitted over HTTPS with API key authentication. Your API key is encrypted and stored securely on your system using industry-standard encryption methods.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What data does the agent collect?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent collects only database performance metrics, system statistics, and metadata. We never access or store your actual business data, table contents, or query results.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>Can the agent modify my database?</span>
-                </div>
-                <div class="faq-answer">
-                    No, the agent operates in strict read-only mode and cannot modify your database structure, data, or configuration. It only reads performance statistics and system metadata.
-                </div>
-            </div>
-
-            <!-- Agent Performance & Impact -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What is the performance impact on my database?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent has minimal impact on database performance, typically using less than 0.1% of database resources. It uses efficient read-only queries on system metadata views with intelligent monitoring intervals that balance real-time visibility with resource conservation.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>How much system resources does the agent consume?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent is built with Rust for optimal efficiency, typically using less than 100MB of memory and minimal CPU resources. Network usage is optimized through data compression and batching.
-                </div>
-            </div>
-
-            <!-- Monitoring & Health Checks -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What is a health check?</span>
-                </div>
-                <div class="faq-answer">
-                    A health check is a comprehensive analysis that evaluates your database server's overall wellness across five critical areas: security, performance, configuration, schema design, and maintenance. Think of it like a medical checkup for your database. It examines current conditions, identifies potential issues, and provides actionable recommendations to keep your system running optimally.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="faq-icon">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <span>What monitoring intervals are available?</span>
-                </div>
-                <div class="faq-answer">
-                    The agent uses three intelligent monitoring frequencies optimized for different data types: High frequency (default 10 seconds) for active sessions and critical metrics that require immediate attention, Medium frequency (default 1 minute) for query performance and replication monitoring, and Low frequency (default 10 minutes) for schema and configuration data that changes less frequently.
-                </div>
-            </div>
+        </div>
+        
+        <!-- See More Link -->
+        <div class="faq-see-more">
+            <a href="faq/" class="see-more-link">See More Questions</a>
         </div>
     </div>
 
-    <!-- Database -->
-    <div class="database-section">
-        <div class="container">
-            <div class="tag">
-                <img src="assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
-                <span>Book a Demo</span>
-            </div>
-            <div class="database-content">
-                <div class="database-text">
-                    <h2 class="database-title">Ready To Optimize Your <span>Database Performance?</span></h2>
-                    <p class="database-description">Book your personalized demo today and see how Logstag can transform
-                        your database monitoring.</p>
-                </div>
-                <div class="database-image">
-                    <div class="calendly-widget" data-url="https://calendly.com/d/csgx-yt6-262/30-min-meeting"></div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -549,12 +394,9 @@
 
             <!-- Navigation Links -->
             <nav class="footer-nav">
-                <a href="#insights">Insights</a>
-                <a href="#features">Features</a>
-                <a href="#faq">FAQ</a>
-                <a href="pricing">Pricing</a>
-                <a href="contact">Contact</a>
-                <a href="https://app.logstag.com" class="footer-login" target="_blank">Log In</a>
+                <a href="faq/">FAQ</a>
+                <a href="pricing/">Pricing</a>
+                <a href="contact/">Contact</a>
             </nav>
 
             <!-- Separator -->
@@ -573,7 +415,6 @@
             </div>
         </div>
     </footer>
-    <script src="https://assets.calendly.com/assets/external/widget.js"></script>
     <script src="script.js"></script>
 
 </body>

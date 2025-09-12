@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Logstag Database Monitoring</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="../">
+                        <img src="../assets/logo.svg" alt="Logstag" class="logo-img">
+                    </a>
+                </div>
+
+                <nav class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="../faq/" class="nav-link active">FAQ</a></li>
+                        <li><a href="../pricing/" class="nav-link">Pricing</a></li>
+                        <li><a href="../contact/" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-buttons">
+                    <a href="../contact/" class="nav-book">Book a Demo</a>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="container hero-section">
+        <div class="hero-text">
+            Frequently Asked <br> <span>Questions</span>
+        </div>
+        <div class="hero-description">Everything you need to know about Logstag database monitoring. Can't find what you're looking for? <a href="../contact/" style="color: #203fae; text-decoration: none;">Contact our support team</a>.</div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section container">
+        <div class="faq-items">
+            <!-- Getting Started -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>How does Logstag work?</span>
+                </div>
+                <div class="faq-answer">
+                    Logstag agent continuously collects performance metrics and system statistics from your database using read-only queries. This data is securely transmitted to our cloud platform where it's stored, analyzed, and processed to generate insights. Our backend systems monitor the incoming data for anomalies, calculate health scores, and generate alerts when issues are detected. You can then view dashboards, reports, and recommendations through our web interface to optimize your database performance.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>Which databases are supported?</span>
+                </div>
+                <div class="faq-answer">
+                    Logstag supports PostgreSQL and Microsoft SQL Server across all major platforms including cloud service providers, and on-premises installations.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What platforms can I install the agent on?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent runs on Linux (Ubuntu, Debian, RHEL, CentOS, Amazon Linux, Fedora) and Windows Server. We provide native packages (.deb, .rpm) for Linux and MSI installers for Windows, supporting x86_64 and ARM64 architectures.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>How quickly can I set up monitoring?</span>
+                </div>
+                <div class="faq-answer">
+                    Installation typically takes 5-10 minutes. Once the agent is installed and configured with your database credentials, you can start monitoring your databases.
+                </div>
+            </div>
+
+            <!-- Agent Installation & Setup -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What are the system requirements?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent requires minimal resources: 512MB RAM, 1GB disk space, and network connectivity to your database and our monitoring service.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>Does the agent require internet connectivity?</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, the agent needs outbound HTTPS connectivity to transmit monitoring data to the Logstag service. No inbound connections to your infrastructure are required.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>Can I monitor multiple databases with one agent?</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, a single agent installation can monitor multiple databases on the same server.
+                </div>
+            </div>
+
+            <!-- Agent Security -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What database privileges does the agent require?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent requires minimal read-only permissions to system views and metadata. For SQL Server, this means VIEW SERVER STATE and VIEW DATABASE STATE permissions, plus access to Query Store views if enabled. For PostgreSQL, the agent needs pg_monitor role membership or pg_read_all_stats permissions. No administrative or write permissions are required.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>How is my data transmitted securely?</span>
+                </div>
+                <div class="faq-answer">
+                    All data is transmitted over HTTPS with API key authentication. Your API key is encrypted and stored securely on your system using industry-standard encryption methods.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What data does the agent collect?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent collects only database performance metrics, system statistics, and metadata. We never access or store your actual business data, table contents, or query results.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>Can the agent modify my database?</span>
+                </div>
+                <div class="faq-answer">
+                    No, the agent operates in strict read-only mode and cannot modify your database structure, data, or configuration. It only reads performance statistics and system metadata.
+                </div>
+            </div>
+
+            <!-- Agent Performance & Impact -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What is the performance impact on my database?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent has minimal impact on database performance, typically using less than 0.1% of database resources. It uses efficient read-only queries on system metadata views with intelligent monitoring intervals that balance real-time visibility with resource conservation.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>How much system resources does the agent consume?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent is built with Rust for optimal efficiency, typically using less than 100MB of memory and minimal CPU resources. Network usage is optimized through data compression and batching.
+                </div>
+            </div>
+
+            <!-- Monitoring & Health Checks -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What is a health check?</span>
+                </div>
+                <div class="faq-answer">
+                    A health check is a comprehensive analysis that evaluates your database server's overall wellness across five critical areas: security, performance, configuration, schema design, and maintenance. Think of it like a medical checkup for your database. It examines current conditions, identifies potential issues, and provides actionable recommendations to keep your system running optimally.
+                </div>
+            </div>
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>What monitoring intervals are available?</span>
+                </div>
+                <div class="faq-answer">
+                    The agent uses three intelligent monitoring frequencies optimized for different data types: High frequency (default 10 seconds) for active sessions and critical metrics that require immediate attention, Medium frequency (default 1 minute) for query performance and replication monitoring, and Low frequency (default 10 minutes) for schema and configuration data that changes less frequently.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="../assets/footer-logo.png" style="width: 61.582px;height: 78.831px;" />
+                    </div>
+                    <h3 class="logo-text">logstag</h3>
+                </div>
+
+            <!-- Navigation Links -->
+            <nav class="footer-nav">
+                <a href="../faq/">FAQ</a>
+                <a href="../pricing/">Pricing</a>
+                <a href="../contact/">Contact</a>
+            </nav>
+
+                <!-- Separator -->
+                <div class="footer-separator"></div>
+
+                <!-- Bottom Section -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        © 2025 Logstag All rights reserved.
+                    </div>
+                    <div class="legal-links">
+                        <a href="#terms">Terms</a>
+                        <a href="#privacy">Privacy</a>
+                        <a href="#cookies">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

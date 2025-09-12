@@ -472,18 +472,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start initializing Calendly immediately
     initCalendly();
     
-    // Header Book a Demo button scroll to database section
-    const headerBookDemoBtn = document.querySelector('.navbar .nav-book');
-    if (headerBookDemoBtn) {
-        headerBookDemoBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const databaseSection = document.querySelector('.database-section');
-            if (databaseSection) {
-                databaseSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    }
 });

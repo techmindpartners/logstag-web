@@ -84,6 +84,7 @@ body *{
   list-style: none;
   gap: 20px;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-link {
@@ -137,6 +138,7 @@ body *{
   background: #203fae;
   padding: 9px 18px;
   border: none;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -219,6 +221,11 @@ body *{
   max-width: 684px;
 }
 
+.hero-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
 .hero-buttons {
   display: flex;
   gap: 16px;
@@ -278,7 +285,7 @@ body *{
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .insights-text {
@@ -344,6 +351,8 @@ body *{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  margin: 60px auto 100px;
+  max-width: 1200px;
 }
 
 .insights-value {
@@ -697,6 +706,166 @@ body *{
 .faq-item.active .faq-answer {
   max-height: 300px;
   padding: 0 20px 20px 60px;
+}
+
+.faq-see-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.see-more-link {
+  display: inline-block;
+  background: white;
+  color: #203fae;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: 2px solid #203fae;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(32, 63, 174, 0.1);
+}
+
+.see-more-link:hover {
+  background-color: #203fae;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(32, 63, 174, 0.3);
+}
+
+/* GITEX Banner Styles */
+.gitex-banner-section {
+  padding: 80px 0;
+  background: white;
+  margin: 60px 0;
+}
+
+.gitex-banner {
+  background: white;
+  border-radius: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.gitex-banner-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.coming-soon-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.coming-soon-icon {
+  font-size: 64px;
+  color: #203fae;
+  margin-bottom: 32px;
+}
+
+.coming-soon-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #101f56;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.coming-soon-description {
+  font-size: 20px;
+  color: #717680;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.coming-soon-features {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: #101f56;
+  font-weight: 500;
+}
+
+.feature-item i {
+  color: #203fae;
+  font-size: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #203fae;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(32, 63, 174, 0.3);
+}
+
+.cta-button:hover {
+  background: #1a2f8a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(32, 63, 174, 0.4);
+}
+
+/* Mobile Responsive for GITEX Banner */
+@media (max-width: 768px) {
+  .gitex-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .gitex-title {
+    font-size: 24px;
+  }
+  
+  .gitex-subtitle {
+    font-size: 32px;
+  }
+  
+  .gitex-date {
+    font-size: 20px;
+  }
+  
+  .gitex-banner {
+    padding: 40px 20px;
+  }
+  
+  .coming-soon-features {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .coming-soon-title {
+    font-size: 36px;
+  }
+  
+  .coming-soon-description {
+    font-size: 18px;
+  }
 }
 
 .pricing-section-header {
@@ -1935,20 +2104,13 @@ body *{
   border-radius: 16px;
   padding: 20px;
   width: 80%;
-  max-height: 400px;
-  overflow: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-.action-tab-content::-webkit-scrollbar {
-  display: none; /* WebKit */
+  overflow: visible;
 }
 
 .action-tab-content .video-img-resize {
   display: none;
   width: 100%;
-  height: max-content;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -1988,7 +2150,6 @@ body *{
   .action-tab-content {
     width: 95%;
     padding: 16px;
-    max-height: 300px;
   }
   
   .pricing-toggle {

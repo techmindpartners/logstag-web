@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Pricing - Logstag</title>
-    <meta name="description" content="Choose the plan that fits your needs. No hidden fees, cancel anytime.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/logstag-logo-light-bg.png">
-
-    <!-- CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Logstag Database Monitoring</title>
     <link rel="stylesheet" href="../styles.css">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,16 +24,14 @@
 
                 <nav class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
-                        <li><a href="../#insights" class="nav-link">Insights</a></li>
-                        <li><a href="../#features" class="nav-link">Features</a></li>
-                        <li><a href="../#faq" class="nav-link">FAQ</a></li>
-                        <li><a href="../pricing" class="nav-link active">Pricing</a></li>
-                        <li><a href="../contact" class="nav-link">Contact</a></li>
+                        <li><a href="../faq/" class="nav-link">FAQ</a></li>
+                        <li><a href="../pricing/" class="nav-link active">Pricing</a></li>
+                        <li><a href="../contact/" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <button class="nav-book">Book a Demo</button>
+                    <a href="../contact/" class="nav-book">Book a Demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -56,184 +43,64 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section for Pricing -->
-        <div class="container hero-section">
-            <div class="tag"> <img src="../assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;"> <span>PRICING</span></div>
-            <div class="hero-text">
-                Choose the plan that fits <br> your needs <span>perfectly</span>.
-            </div>
-            <div class="hero-description">No hidden fees, cancel anytime. Start with our free trial and scale as you grow.</div>
+    <!-- Hero Section -->
+    <div class="container hero-section">
+        <div class="hero-text">
+            Pricing <br> <span>Coming Soon</span>
         </div>
+        <div class="hero-description">We're working on flexible pricing plans that will fit your needs. Stay tuned for updates!</div>
+        <div class="hero-cta">
+            <a href="../contact/" class="cta-button">Get Notified When Available</a>
+        </div>
+    </div>
 
-        <!-- Pricing -->
-        <div class="pricing-section container">
-            <div class="pricing-toggle">
-                <button class="toggle-btn active" data-period="monthly">Monthly</button>
-                <button class="toggle-btn" data-period="yearly">Yearly</button>
-            </div>
-
-            <!-- Pricing Calculator -->
-            <div class="pricing-calculator">
-                <div class="calculator-header">
-                    <h3>Calculate Your Pricing</h3>
-                    <p>Based on your database instances and health check frequency</p>
-                </div>
-                
-                <div class="calculator-controls">
-                    <div class="control-group">
-                        <label for="instances">Number of Database Instances</label>
-                        <div class="slider-container">
-                            <input type="range" id="instances" min="1" max="100" value="5" class="pricing-slider">
-                            <div class="slider-value">
-                                <span id="instances-value">5</span> instances
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="control-group">
-                        <label for="frequency">Health Check Frequency</label>
-                        <div class="frequency-options">
-                            <button class="freq-btn active" data-frequency="weekly">Weekly (Recommended)</button>
-                            <button class="freq-btn" data-frequency="daily">Daily</button>
-                            <button class="freq-btn" data-frequency="monthly">Monthly</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="pricing-result">
-                    <div class="result-card">
-                        <div class="result-header">
-                            <h4>Your Annual Cost</h4>
-                            <div class="result-price">
-                                $<span id="annual-price">1,200</span>
-                            </div>
-                        </div>
-                        <div class="result-details">
-                            <div class="detail-item">
-                                <span>Health checks per year:</span>
-                                <span id="health-checks">260</span>
-                            </div>
-                            <div class="detail-item">
-                                <span>Cost per instance:</span>
-                                $<span id="cost-per-instance">1,200</span>
-                            </div>
-                            <div class="detail-item">
-                                <span>Total instances:</span>
-                                <span id="total-instances">5</span>
-                            </div>
-                        </div>
-                        <button class="result-btn">Book a Demo</button>
-                    </div>
-                </div>
+    <!-- GITEX Banner -->
+    <div class="gitex-banner-section">
+        <div class="container">
+            <div class="gitex-banner">
+                <img src="../assets/gitex-banner.jpeg" alt="GITEX Global Dubai - Logstag & Techmind Launch" class="gitex-banner-img">
             </div>
         </div>
-    </main>
+    </div>
+
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <!-- Logo -->
-            <div class="footer-logo">
-                <div class="logo-icon">
-                    <img src="../assets/footer-logo.png" style="width: 61.582px;height: 78.831px;" />
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="../assets/footer-logo.png" style="width: 61.582px;height: 78.831px;" />
+                    </div>
+                    <h3 class="logo-text">logstag</h3>
                 </div>
-                <h3 class="logo-text">logstag</h3>
-            </div>
 
             <!-- Navigation Links -->
             <nav class="footer-nav">
-                <a href="../#insights">Insights</a>
-                <a href="../#features">Features</a>
-                <a href="../#faq">FAQ</a>
-                <a href="../pricing">Pricing</a>
-                <a href="../contact">Contact</a>
-                <a href="https://app.logstag.com" class="footer-login" target="_blank">Log In</a>
+                <a href="../faq/">FAQ</a>
+                <a href="../pricing/">Pricing</a>
+                <a href="../contact/">Contact</a>
             </nav>
 
-            <!-- Separator -->
-            <div class="footer-separator"></div>
+                <!-- Separator -->
+                <div class="footer-separator"></div>
 
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    © 2025 Logstag All rights reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="#terms">Terms</a>
-                    <a href="#privacy">Privacy</a>
+                <!-- Bottom Section -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        © 2025 Logstag All rights reserved.
+                    </div>
+                    <div class="legal-links">
+                        <a href="#terms">Terms</a>
+                        <a href="#privacy">Privacy</a>
+                        <a href="#cookies">Cookies</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="../script.js"></script>
-    <script>
-        // Pricing Calculator Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const instancesSlider = document.getElementById('instances');
-            const instancesValue = document.getElementById('instances-value');
-            const annualPrice = document.getElementById('annual-price');
-            const healthChecks = document.getElementById('health-checks');
-            const costPerInstance = document.getElementById('cost-per-instance');
-            const totalInstances = document.getElementById('total-instances');
-            const freqButtons = document.querySelectorAll('.freq-btn');
-            
-            let currentFrequency = 'weekly';
-            
-            // Frequency button functionality
-            freqButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    freqButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    currentFrequency = this.dataset.frequency;
-                    calculatePricing();
-                });
-            });
-            
-            // Slider functionality
-            instancesSlider.addEventListener('input', function() {
-                instancesValue.textContent = this.value;
-                totalInstances.textContent = this.value;
-                calculatePricing();
-            });
-            
-            // Calculate pricing based on instances and frequency
-            function calculatePricing() {
-                const instances = parseInt(instancesSlider.value);
-                let checksPerYear;
-                let costPerInstanceValue;
-                
-                // Calculate health checks per year based on frequency
-                switch(currentFrequency) {
-                    case 'daily':
-                        checksPerYear = instances * 365;
-                        costPerInstanceValue = 1200; // $1200 per instance for daily checks
-                        break;
-                    case 'weekly':
-                        checksPerYear = instances * 52;
-                        costPerInstanceValue = 1000; // $1000 per instance for weekly checks
-                        break;
-                    case 'monthly':
-                        checksPerYear = instances * 12;
-                        costPerInstanceValue = 800; // $800 per instance for monthly checks
-                        break;
-                }
-                
-                const totalCost = instances * costPerInstanceValue;
-                
-                // Update UI
-                healthChecks.textContent = checksPerYear.toLocaleString();
-                costPerInstance.textContent = costPerInstanceValue.toLocaleString();
-                annualPrice.textContent = totalCost.toLocaleString();
-            }
-            
-            // Initialize calculation
-            calculatePricing();
-        });
-    </script>
 </body>
-
 </html>
