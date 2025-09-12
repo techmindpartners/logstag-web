@@ -74,96 +74,58 @@
                 <button class="toggle-btn" data-period="yearly">Yearly</button>
             </div>
 
-            <div class="pricing-cards">
-                <div class="pricing-card basic">
-                    <div class="card-header">
-                        <div class="plan-header-top">
-                            <div class="plan-icon">
-                                <img src="../assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
-                            </div>
-                            <h3 class="plan-title">Basic</h3>
-                        </div>
-                        <p class="plan-subtitle">Best for personal use.</p>
-                    </div>
-
-                    <div class="card-price">
-                        <span class="price-amount">$297</span>
-                        <span class="price-period">/ mo</span>
-                    </div>
-
-                    <p class="price-note">Pause or cancel anytime.</p>
-
-                    <button class="card-btn basic-btn">Book a Demo</button>
-
-                    <ul class="plan-features">
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-times"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-times"></i>Lorem ipsum dolor sit amet</li>
-                    </ul>
+            <!-- Pricing Calculator -->
+            <div class="pricing-calculator">
+                <div class="calculator-header">
+                    <h3>Calculate Your Pricing</h3>
+                    <p>Based on your database instances and health check frequency</p>
                 </div>
-
-                <div class="pricing-card pro featured">
-                    <div class="popular-badge">
-                        🔥
-                        <span>MOST POPULAR</span>
-                    </div>
-
-                    <div class="card-header">
-                        <div class="plan-header-top">
-                            <div class="plan-icon">
-                                <img src="../assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
+                
+                <div class="calculator-controls">
+                    <div class="control-group">
+                        <label for="instances">Number of Database Instances</label>
+                        <div class="slider-container">
+                            <input type="range" id="instances" min="1" max="100" value="5" class="pricing-slider">
+                            <div class="slider-value">
+                                <span id="instances-value">5</span> instances
                             </div>
-                            <h3 class="plan-title">Pro</h3>
                         </div>
-                        <p class="plan-subtitle">Best for start-ups.</p>
                     </div>
-
-                    <div class="card-price">
-                        <span class="price-amount">$497</span>
-                        <span class="price-period">/ mo</span>
+                    
+                    <div class="control-group">
+                        <label for="frequency">Health Check Frequency</label>
+                        <div class="frequency-options">
+                            <button class="freq-btn active" data-frequency="weekly">Weekly (Recommended)</button>
+                            <button class="freq-btn" data-frequency="daily">Daily</button>
+                            <button class="freq-btn" data-frequency="monthly">Monthly</button>
+                        </div>
                     </div>
-
-                    <p class="price-note">Pause or cancel anytime.</p>
-
-                    <button class="card-btn pro-btn">Book a Demo</button>
-
-                    <ul class="plan-features">
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    </ul>
                 </div>
-
-                <div class="pricing-card enterprise" style="background: #F5F5F5;">
-                    <div class="card-header">
-                        <div class="plan-header-top">
-                            <div class="plan-icon">
-                                <img src="../assets/lightning.svg" alt="Lightning" style="width: 18px; height: 18px;">
+                
+                <div class="pricing-result">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <h4>Your Annual Cost</h4>
+                            <div class="result-price">
+                                $<span id="annual-price">1,200</span>
                             </div>
-                            <h3 class="plan-title">Enterprise</h3>
                         </div>
-                        <p class="plan-subtitle">Best for enterprise business.</p>
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <span>Health checks per year:</span>
+                                <span id="health-checks">260</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Cost per instance:</span>
+                                $<span id="cost-per-instance">1,200</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Total instances:</span>
+                                <span id="total-instances">5</span>
+                            </div>
+                        </div>
+                        <button class="result-btn">Book a Demo</button>
                     </div>
-
-                    <div class="card-price">
-                        <span class="price-amount custom">Custom</span>
-                    </div>
-
-                    <p class="price-note">Get in touch for details.</p>
-
-                    <button class="card-btn enterprise-btn">Contact Sales Team</button>
-
-                    <ul class="plan-features">
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                        <li><i class="fa-solid fa-check"></i>Lorem ipsum dolor sit amet</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -208,6 +170,70 @@
 
     <!-- JavaScript -->
     <script src="../script.js"></script>
+    <script>
+        // Pricing Calculator Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const instancesSlider = document.getElementById('instances');
+            const instancesValue = document.getElementById('instances-value');
+            const annualPrice = document.getElementById('annual-price');
+            const healthChecks = document.getElementById('health-checks');
+            const costPerInstance = document.getElementById('cost-per-instance');
+            const totalInstances = document.getElementById('total-instances');
+            const freqButtons = document.querySelectorAll('.freq-btn');
+            
+            let currentFrequency = 'weekly';
+            
+            // Frequency button functionality
+            freqButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    freqButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFrequency = this.dataset.frequency;
+                    calculatePricing();
+                });
+            });
+            
+            // Slider functionality
+            instancesSlider.addEventListener('input', function() {
+                instancesValue.textContent = this.value;
+                totalInstances.textContent = this.value;
+                calculatePricing();
+            });
+            
+            // Calculate pricing based on instances and frequency
+            function calculatePricing() {
+                const instances = parseInt(instancesSlider.value);
+                let checksPerYear;
+                let costPerInstanceValue;
+                
+                // Calculate health checks per year based on frequency
+                switch(currentFrequency) {
+                    case 'daily':
+                        checksPerYear = instances * 365;
+                        costPerInstanceValue = 1200; // $1200 per instance for daily checks
+                        break;
+                    case 'weekly':
+                        checksPerYear = instances * 52;
+                        costPerInstanceValue = 1000; // $1000 per instance for weekly checks
+                        break;
+                    case 'monthly':
+                        checksPerYear = instances * 12;
+                        costPerInstanceValue = 800; // $800 per instance for monthly checks
+                        break;
+                }
+                
+                const totalCost = instances * costPerInstanceValue;
+                
+                // Update UI
+                healthChecks.textContent = checksPerYear.toLocaleString();
+                costPerInstance.textContent = costPerInstanceValue.toLocaleString();
+                annualPrice.textContent = totalCost.toLocaleString();
+            }
+            
+            // Initialize calculation
+            calculatePricing();
+        });
+    </script>
 </body>
 
 </html>

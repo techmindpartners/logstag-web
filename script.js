@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const initCalendly = () => {
         if (window.Calendly) {
             Calendly.initInlineWidget({
-                url: 'https://calendly.com/hello-logstag/30min',
+                url: 'https://calendly.com/d/csgx-yt6-262/30-min-meeting',
                 parentElement: document.querySelector('.calendly-widget')
             });
         } else {
