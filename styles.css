@@ -845,11 +845,7 @@ body *{
   box-shadow: 0 4px 12px rgba(32, 63, 174, 0.3);
 }
 
-/* GITEX Banner Styles */
-.gitex-banner-section {
-  background: white;
-  margin: 60px 0;
-}
+
 
 .gitex-banner {
   background: white;
