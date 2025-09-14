@@ -233,9 +233,18 @@ body *{
 }
 
 
+.content-img-wrapper {
+  background: linear-gradient(45deg, #C0DDDE, #DDB4EE, #ADB3FF);
+  padding: 8px;
+  border-radius: 24px;
+  display: inline-block;
+  width: 100%;
+}
+
 .content-img-resize {
   border-radius: 16px;
   width: 100%;
+  display: block;
 }
 
 .loved-by-teams {
@@ -2222,9 +2231,10 @@ body *{
   justify-content: center;
   background: #f8f9fa;
   border-radius: 16px;
-  padding: 20px;
+  padding: 0;
   width: 80%;
-  overflow: visible;
+  height: 500px;
+  overflow: hidden;
 }
 
 .action-tab-content .video-img-resize {
@@ -2232,17 +2242,67 @@ body *{
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  object-fit: cover;
+  object-position: top;
 }
 
 .action-tab-content .video-img-resize.active {
   display: block;
 }
 
-.action-tab-content .video-img-resize:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+.action-tab-content .integrations-grid {
+  display: none;
+  padding: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.action-tab-content .integrations-grid.active {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  align-content: start;
+}
+
+.integration-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.integration-item:hover {
+  transform: translateY(-2px);
+}
+
+.integration-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.integration-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.action-tab-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(transparent, #f8f9fa);
+  pointer-events: none;
 }
 
 /* Scroll Animation */
@@ -2269,7 +2329,27 @@ body *{
   /* Mobile Action Tab Content */
   .action-tab-content {
     width: 95%;
+    padding: 0;
+    height: 400px;
+  }
+  
+  .action-tab-content .integrations-grid.active {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
     padding: 16px;
+  }
+  
+  .integration-item {
+    padding: 8px;
+  }
+  
+  .integration-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .integration-name {
+    font-size: 10px;
   }
   
   .pricing-toggle {
