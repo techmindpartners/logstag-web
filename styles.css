@@ -219,6 +219,7 @@ body *{
   font-weight: 500;
   line-height: 24px;
   max-width: 684px;
+  padding: 0 16px;
 }
 
 .hero-cta {
