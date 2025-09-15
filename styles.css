@@ -21,6 +21,12 @@ body {
 body *{
   font-family: "Inter", sans-serif !important;
 }
+
+/* Reset heading margins and paddings to maintain design */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -194,7 +200,7 @@ body *{
   margin: 0 auto;
 }
 
-.hero-text {
+.hero-text, h1.hero-text {
   color: #101f56;
   text-align: center;
   font-family: Inter;
@@ -204,6 +210,8 @@ body *{
   line-height: normal;
   letter-spacing: -3.6px;
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-text span {
@@ -299,7 +307,7 @@ body *{
   margin-bottom: 40px;
 }
 
-.insights-text {
+.insights-text, h2.insights-text {
   color: #101f56;
   text-align: center;
   font-family: Inter;
@@ -309,6 +317,8 @@ body *{
   line-height: 66px;
   letter-spacing: -3px;
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
 }
 
 .insights-text span {
@@ -1622,7 +1632,7 @@ body *{
     padding: 120px 0px 30px 0px;
   }
 
-  .hero-text {
+  .hero-text, h1.hero-text {
     font-size: 32px;
     letter-spacing: -3px;
   }
@@ -1655,7 +1665,7 @@ body *{
     margin-bottom: 56px;
   }
 
-  .insights-text {
+  .insights-text, h2.insights-text {
     font-size: 32px;
     letter-spacing: -0.69px;
   }
