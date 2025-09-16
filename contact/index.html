@@ -192,7 +192,7 @@
     <script src="https://assets.calendly.com/assets/external/widget.js"></script>
     <script src="../script.js"></script>
     <script>
-        // Contact Form with Brevo Integration
+        // Contact Form with Formspree Integration
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.querySelector('.contact-form');
             
@@ -215,8 +215,8 @@
                             message: formData.get('message')
                         };
                         
-                        // Send via Formspree (temporary solution until backend is ready)
-                        const response = await fetch('https://formspree.io/f/xdknkpvp', {
+                        // Send via Formspree (secure solution)
+                        const response = await fetch('https://formspree.io/f/mvgbnjae', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
