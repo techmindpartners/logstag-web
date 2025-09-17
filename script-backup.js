@@ -214,11 +214,11 @@ function toggleFaq(questionElement) {
     if (isActive) {
         // If already active, close it
         faqItem.classList.remove('active');
-        icon.className = 'fa-solid fa-plus';
+        icon.textContent = '+';
     } else {
         // If not active, open it
         faqItem.classList.add('active');
-        icon.className = 'fa-solid fa-minus';
+        icon.textContent = '−';
     }
 }
 
