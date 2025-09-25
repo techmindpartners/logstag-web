@@ -92,7 +92,7 @@
         </h1>
         <div class="hero-description">We're working on flexible pricing plans that will fit your needs. Stay tuned for updates! <a href="../faq/" style="color: #203fae; text-decoration: none;">Check our FAQ</a> for more information about our features.</div>
         <div class="hero-cta">
-            <a href="../contact/" class="cta-button">Get Notified When Available</a>
+            <a href="../contact/" class="cta-button" id="get-notified-btn">Get Notified When Available</a>
         </div>
     </div>
 
@@ -146,5 +146,19 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script>
+        // Handle Get Notified button click
+        document.addEventListener('DOMContentLoaded', function() {
+            const getNotifiedBtn = document.getElementById('get-notified-btn');
+            if (getNotifiedBtn) {
+                getNotifiedBtn.addEventListener('click', function(e) {
+                    // Add notify parameter to URL
+                    const url = new URL(this.href);
+                    url.searchParams.set('notify', 'true');
+                    this.href = url.toString();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -107,30 +107,6 @@
         <div class="contact-section container">
             <div class="contact-content">
                 <div class="contact-left">
-                    <div class="contact-card">
-                        <h3 class="contact-title">Book a Demo</h3>
-                        <p class="contact-description">Schedule a personalized demo to see Logstag in action.</p>
-                        <div class="calendly-widget" data-url="https://calendly.com/d/csgx-yt6-262/30-min-meeting">
-                            <div class="calendly-fallback" style="display: none; padding: 20px; text-align: center; background: #f8f9fa; border-radius: 8px;">
-                                <p>Unable to load booking widget. Please contact us directly.</p>
-                                <a href="mailto:support@logstag.com" class="btn btn-primary">Contact Support</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-right">
-                    <div class="contact-info-card">
-                        <div class="contact-card">
-                            <h3 class="contact-title">Contact</h3>
-                            <p class="contact-description">Get in touch with us for support, sales inquiries, or general questions.</p>
-                            <div class="contact-details">
-                                <p class="contact-address">Meydan Grandstand, 6th floor,<br>Meydan Road, Nad Al Sheba,<br>Dubai, U.A.E</p>
-                                <a href="mailto:hello@logstag.com" class="contact-link">hello@logstag.com</a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="contact-form-container">
                         <div class="contact-form-header">
                             <h3 class="form-title">Send us a message</h3>
@@ -155,6 +131,19 @@
 
                             <button type="submit" class="form-submit">Send Message</button>
                         </form>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class="contact-info-card">
+                        <div class="contact-card">
+                            <h3 class="contact-title">Contact</h3>
+                            <p class="contact-description">Get in touch with us for support, sales inquiries, or general questions.</p>
+                            <div class="contact-details">
+                                <p class="contact-address">Meydan Grandstand, 6th floor,<br>Meydan Road, Nad Al Sheba,<br>Dubai, U.A.E</p>
+                                <a href="mailto:hello@logstag.com" class="contact-link">hello@logstag.com</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -303,8 +292,23 @@
             }
         };
         
-        // Initialize Calendly when DOM is ready
-        document.addEventListener('DOMContentLoaded', initCalendly);
+        // Check if we came from pricing page and focus on name input
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('notify') === 'true') {
+            // Scroll to the form section
+            const formContainer = document.querySelector('.contact-form-container');
+            if (formContainer) {
+                formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Focus on name input after a short delay
+                setTimeout(function() {
+                    const nameInput = document.getElementById('name');
+                    if (nameInput) {
+                        nameInput.focus();
+                    }
+                }, 500);
+            }
+        }
     </script>
 </body>
 
