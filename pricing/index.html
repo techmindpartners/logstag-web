@@ -73,7 +73,7 @@
                 </nav>
 
                 <div class="nav-buttons">
-                    <a href="../contact/" class="nav-book">Book a Demo</a>
+                    <a href="../contact/" class="nav-book" id="book-demo-btn">Book a Demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -154,6 +154,17 @@
                 getNotifiedBtn.addEventListener('click', function(e) {
                     // Add notify parameter to URL
                     const url = new URL(this.href);
+                    url.searchParams.set('notify', 'true');
+                    this.href = url.toString();
+                });
+            }
+            
+            // Handle Book a Demo button click
+            const bookDemoBtn = document.getElementById('book-demo-btn');
+            if (bookDemoBtn) {
+                bookDemoBtn.addEventListener('click', function(e) {
+                    // Add notify parameter to URL
+                    const url = new URL(this.href, window.location.origin);
                     url.searchParams.set('notify', 'true');
                     this.href = url.toString();
                 });
