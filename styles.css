@@ -15,7 +15,14 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+body > .footer {
+    margin-top: auto
 }
 
 body * {
