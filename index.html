@@ -100,12 +100,14 @@
                         <li><a href="/" class="nav-link">Home</a></li>
                         <li><a href="faq/" class="nav-link">FAQ</a></li>
                         <li><a href="pricing/" class="nav-link">Pricing</a></li>
-                        <li><a href="contact/" class="nav-link">Contact</a></li>
+                        <li><a href="contact/?from=home-nav" class="nav-link">Contact</a></li>
+                        <li><a href="https://docs.logstag.com" class="nav-link">Docs</a></li>
+                        <li><a href="https://app.logstag.com" class="nav-link">Sign in</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <a href="contact/" class="nav-book" id="book-demo-btn">Book a Demo</a>
+                    <a href="contact/?intent=demo&from=home-nav" class="nav-book" id="book-demo-btn">Request a guided demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -121,7 +123,11 @@
             Monitor Your Databases <br />Like <span>Never Before</span>.
         </h1>
         <div class="hero-description"><span style="color: #203fae; font-weight: 600;">AI Powered</span> actionable insights, powerful analytics, and proactive alerts for multiple database
-            engines. Optimize performance and prevent issues before they impact your users. <a href="#features" style="color: #203fae; text-decoration: none;">Learn more about our features</a> or <a href="contact/" style="color: #203fae; text-decoration: none;">schedule a demo</a>.</div>
+            engines. Optimize performance and prevent issues before they impact your users. <a href="#features" style="color: #203fae; text-decoration: none;">Learn more about our features</a>.</div>
+        <div class="hero-cta hero-cta-group">
+            <a href="contact/?intent=trial&from=home-hero" class="cta-button">Start 1-month free trial</a>
+            <a href="contact/?intent=demo&from=home-hero" class="cta-button cta-button-secondary">Request a guided demo</a>
+        </div>
     </div>
 
 
@@ -303,7 +309,7 @@
     <div id="features" class="powerfull-database-section">
         <h2 class="insights-text">Powerful Database <br> Monitoring <span>Features</span>.</h2>
         <span class="features-description">A comprehensive monitoring ecosystem with interconnected components that work
-            together to provide complete visibility into your database infrastructure performance and health. <a href="pricing/" style="color: #203fae; text-decoration: none;">View our pricing plans</a> to get started.</span>
+            together to provide complete visibility into your database infrastructure performance and health. <a href="contact/?intent=trial&from=home-features" style="color: #203fae; text-decoration: none;">Start your 1-month free trial</a> to get started.</span>
         <div class="features-cards container">
             <div class="features-card">
                 <img src="assets/monitoring.svg" alt="Database monitoring icon representing continuous observability and real-time tracking" loading="lazy">
@@ -358,7 +364,7 @@
     <div id="faq" class="faq-section container">
         <div class="faq-section-header">
             <h2 class="insights-text">Frequently asked<span> questions</span></h2>
-            <span class="insights-description">Everything you need to know about Logstag database monitoring. <a href="faq/" style="color: #203fae; text-decoration: none;">View all questions</a> or <a href="contact/" style="color: #203fae; text-decoration: none;">contact us</a> for more help.</span>
+            <span class="insights-description">Everything you need to know about Logstag database monitoring. <a href="faq/" style="color: #203fae; text-decoration: none;">View all questions</a> or <a href="contact/?from=home-faq" style="color: #203fae; text-decoration: none;">contact us</a> for more help.</span>
         </div>
         <div class="faq-items">
             <div class="faq-item active">
@@ -393,7 +399,7 @@
                     <span>What platforms can I install the agent on?</span>
                 </div>
                 <div class="faq-answer">
-                    The agent runs on Linux (Ubuntu, Debian, RHEL, CentOS, Amazon Linux, Fedora) and Windows Server across on-premises and cloud environments including AWS, Google Cloud, and Microsoft Azure. We provide native packages (.deb, .rpm) for Linux and MSI installers for Windows, supporting x86_64 and ARM64 architectures.
+                    The agent runs on Linux (Ubuntu, Debian, RHEL, CentOS, Amazon Linux, Fedora) and Windows Server across on-premises and cloud environments including AWS, Google Cloud, and Microsoft Azure. We provide native packages (.deb, .rpm) for Linux and MSI installers for Windows, supporting x86_64 and ARM64 architectures. All agent packages are published on <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener" style="color: #203fae; text-decoration: none;">GitHub</a>.
                 </div>
             </div>
 
@@ -428,8 +434,14 @@
                 <a href="/">Home</a>
                 <a href="faq/">FAQ</a>
                 <a href="pricing/">Pricing</a>
-                <a href="contact/">Contact</a>
+                <a href="contact/?from=home-footer">Contact</a>
             </nav>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/logstag" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.producthunt.com/products/logstag" target="_blank" rel="noopener">Product Hunt</a>
+                </div>
 
             <div class="footer-separator"></div>
 
@@ -447,7 +459,7 @@
     </footer>
     <script src="script.js"></script>
     <script>
-        // Handle Book a Demo button click
+        // Handle guided demo button click
         document.addEventListener('DOMContentLoaded', function() {
             const bookDemoBtn = document.getElementById('book-demo-btn');
             if (bookDemoBtn) {
