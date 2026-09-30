@@ -264,20 +264,9 @@
             }
         });
 
-        // Handle guided demo button click
-        const bookDemoBtn = document.getElementById('book-demo-btn');
-        if (bookDemoBtn) {
-            bookDemoBtn.addEventListener('click', function(e) {
-                // Add notify parameter to URL
-                const url = new URL(this.href, window.location.origin);
-                url.searchParams.set('notify', 'true');
-                this.href = url.toString();
-            });
-        }
-        
         // Came from a CTA: scroll to the form and focus the name input
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('notify') === 'true' || urlParams.has('intent')) {
+        if (urlParams.has('intent')) {
             // Scroll to the form section
             const formContainer = document.querySelector('.contact-form-container');
             if (formContainer) {

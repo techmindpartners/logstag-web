@@ -289,19 +289,5 @@
     </footer>
 
     <script src="../script.js"></script>
-    <script>
-        // Handle guided demo button click
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookDemoBtn = document.getElementById('book-demo-btn');
-            if (bookDemoBtn) {
-                bookDemoBtn.addEventListener('click', function(e) {
-                    // Add notify parameter to URL
-                    const url = new URL(this.href, window.location.origin);
-                    url.searchParams.set('notify', 'true');
-                    this.href = url.toString();
-                });
-            }
-        });
-    </script>
 </body>
 </html>
