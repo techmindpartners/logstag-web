@@ -151,14 +151,40 @@ describe('link click events', () => {
         });
     }
 
-    test('the nav "Book a Demo" button sends demo_cta_click', async () => {
+    test('the nav "Request a guided demo" button sends demo_cta_click', async () => {
         page = await loadPage('/faq/');
         clickLink(page, page.document.getElementById('book-demo-btn'));
         const events = page.events();
         assert.equal(events.length, 1);
         assert.equal(events[0].name, 'demo_cta_click');
-        assert.equal(events[0].params.source_page, 'faq');
+        assert.equal(events[0].params.source_page, 'faq-nav');
     });
+
+    test('a #book-demo-btn link without intent still counts as a demo click', async () => {
+        page = await loadPage('/faq/');
+        page.document.getElementById('book-demo-btn').remove();
+        clickLink(page, addLink(page, '/contact/', { id: 'book-demo-btn' }));
+        assert.deepEqual(page.events().map(e => [e.name, e.params.source_page]), [['demo_cta_click', 'faq']]);
+    });
+
+    // The homepage's real CTAs and nav links (LGSTG-1648)
+    const homeLinks = [
+        ['nav Docs', 'a.nav-link[href="https://docs.logstag.com"]', 'docs_click', 'home'],
+        ['nav Sign in', 'a.nav-link[href="https://app.logstag.com"]', 'signin_click', 'home'],
+        ['nav demo button', '#book-demo-btn', 'demo_cta_click', 'home-nav'],
+        ['hero trial CTA', 'a[href="contact/?intent=trial&from=home-hero"]', 'trial_cta_click', 'home-hero'],
+        ['hero demo CTA', 'a[href="contact/?intent=demo&from=home-hero"]', 'demo_cta_click', 'home-hero'],
+        ['features trial link', 'a[href="contact/?intent=trial&from=home-features"]', 'trial_cta_click', 'home-features']
+    ];
+    for (const [label, selector, eventName, sourcePage] of homeLinks) {
+        test(`homepage ${label} sends ${eventName}`, async () => {
+            page = await loadPage('/');
+            const link = page.document.querySelector(selector);
+            assert.ok(link, `link not found: ${selector}`);
+            clickLink(page, link);
+            assert.deepEqual(page.events().map(e => [e.name, e.params.source_page]), [[eventName, sourcePage]]);
+        });
+    }
 
     test('uses the link\'s from= parameter as source_page', async () => {
         page = await loadPage('/');

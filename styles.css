@@ -209,6 +209,31 @@ img[loading=lazy].loaded {
     opacity: 1
 }
 
+@media (min-width:769px) and (max-width:1024px) {
+    .nav-menu {
+        position: static;
+        transform: none;
+        max-width: none;
+        margin-left: auto;
+        margin-right: 20px
+    }
+
+    .nav-list {
+        gap: 14px
+    }
+
+    .nav-link {
+        font-size: 14px;
+        white-space: nowrap
+    }
+
+    .nav-book {
+        padding: 8px 14px;
+        font-size: 14px;
+        white-space: nowrap
+    }
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -1034,6 +1059,24 @@ h2.insights-text {
     background: #1a2f8a;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(32, 63, 174, .4)
+}
+
+.cta-button-secondary {
+    background: #fff;
+    color: #203fae;
+    box-shadow: inset 0 0 0 1.5px #203fae
+}
+
+.cta-button-secondary:hover {
+    background: #f3f5fc;
+    box-shadow: inset 0 0 0 1.5px #203fae, 0 8px 24px rgba(32, 63, 174, .15)
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px
 }
 
 @media (max-width:768px) {
@@ -1943,6 +1986,27 @@ h2.insights-text {
     opacity: .8
 }
 
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 30px
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    opacity: .7;
+    transition: opacity .3s ease
+}
+
+.footer-social a:hover {
+    opacity: 1
+}
+
 .footer-login {
     background: #203fae !important;
     color: #fff !important;
@@ -2401,27 +2465,6 @@ h2.insights-text {
         font-size: 12px;
         padding: 8px 12px;
         min-width: auto
-    }
-}
-
-.calendly-widget {
-    width: 100%;
-    height: 832px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .1)
-}
-
-.calendly-widget iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border: none;
-    border-radius: 12px
-}
-
-@media (max-width:768px) {
-    .calendly-widget {
-        height: 832px
     }
 }
 

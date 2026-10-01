@@ -88,12 +88,14 @@
                         <li><a href="../" class="nav-link">Home</a></li>
                         <li><a href="../faq/" class="nav-link active">FAQ</a></li>
                         <li><a href="../pricing/" class="nav-link">Pricing</a></li>
-                        <li><a href="../contact/" class="nav-link">Contact</a></li>
+                        <li><a href="../contact/?from=faq-nav" class="nav-link">Contact</a></li>
+                        <li><a href="https://docs.logstag.com" class="nav-link">Docs</a></li>
+                        <li><a href="https://app.logstag.com" class="nav-link">Sign in</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <a href="../contact/" class="nav-book" id="book-demo-btn">Book a Demo</a>
+                    <a href="../contact/?intent=demo&from=faq-nav" class="nav-book" id="book-demo-btn">Request a guided demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -110,7 +112,7 @@
         <h1 class="hero-text">
             Frequently Asked <br> <span>Questions</span>
         </h1>
-        <div class="hero-description">Everything you need to know about Logstag database monitoring. Can't find what you're looking for? <a href="../contact/" style="color: #203fae; text-decoration: none;">Contact our support team</a> or <a href="../pricing/" style="color: #203fae; text-decoration: none;">view our pricing plans</a>.</div>
+        <div class="hero-description">Everything you need to know about Logstag database monitoring. Can't find what you're looking for? <a href="../contact/?from=faq-hero" style="color: #203fae; text-decoration: none;">Contact our support team</a> or <a href="../contact/?intent=trial&from=faq-hero" style="color: #203fae; text-decoration: none;">start your 1-month free trial</a>.</div>
     </div>
 
     <!-- FAQ Section -->
@@ -140,7 +142,7 @@
                     <span>What platforms can I install the agent on?</span>
                 </div>
                 <div class="faq-answer">
-                    The agent runs on Linux (Ubuntu, Debian, RHEL, CentOS, Amazon Linux, Fedora) and Windows Server across on-premises and cloud environments including AWS, Google Cloud, and Microsoft Azure. We provide native packages (.deb, .rpm) for Linux and MSI installers for Windows, supporting x86_64 and ARM64 architectures.
+                    The agent runs on Linux (Ubuntu, Debian, RHEL, CentOS, Amazon Linux, Fedora) and Windows Server across on-premises and cloud environments including AWS, Google Cloud, and Microsoft Azure. We provide native packages (.deb, .rpm) for Linux and MSI installers for Windows, supporting x86_64 and ARM64 architectures. All agent packages are published on <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener" style="color: #203fae; text-decoration: none;">GitHub</a>.
                 </div>
             </div>
 
@@ -259,8 +261,14 @@
                 <a href="../">Home</a>
                 <a href="../faq/">FAQ</a>
                 <a href="../pricing/">Pricing</a>
-                <a href="../contact/">Contact</a>
+                <a href="../contact/?from=faq-footer">Contact</a>
             </nav>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/logstag" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.producthunt.com/products/logstag" target="_blank" rel="noopener">Product Hunt</a>
+                </div>
 
                 <!-- Separator -->
                 <div class="footer-separator"></div>
@@ -282,19 +290,5 @@
 
     <script src="../analytics.js"></script>
     <script src="../script.js"></script>
-    <script>
-        // Handle Book a Demo button click
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookDemoBtn = document.getElementById('book-demo-btn');
-            if (bookDemoBtn) {
-                bookDemoBtn.addEventListener('click', function(e) {
-                    // Add notify parameter to URL
-                    const url = new URL(this.href, window.location.origin);
-                    url.searchParams.set('notify', 'true');
-                    this.href = url.toString();
-                });
-            }
-        });
-    </script>
 </body>
 </html>

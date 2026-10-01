@@ -68,12 +68,14 @@
                         <li><a href="../" class="nav-link">Home</a></li>
                         <li><a href="../faq/" class="nav-link">FAQ</a></li>
                         <li><a href="../pricing/" class="nav-link active">Pricing</a></li>
-                        <li><a href="../contact/" class="nav-link">Contact</a></li>
+                        <li><a href="../contact/?from=pricing-nav" class="nav-link">Contact</a></li>
+                        <li><a href="https://docs.logstag.com" class="nav-link">Docs</a></li>
+                        <li><a href="https://app.logstag.com" class="nav-link">Sign in</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <a href="../contact/" class="nav-book" id="book-demo-btn">Book a Demo</a>
+                    <a href="../contact/?intent=demo&from=pricing-nav" class="nav-book" id="book-demo-btn">Request a guided demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -90,9 +92,10 @@
         <h1 class="hero-text">
             Pricing <br> <span>Coming Soon</span>
         </h1>
-        <div class="hero-description">We're working on flexible pricing plans that will fit your needs. Stay tuned for updates! <a href="../faq/" style="color: #203fae; text-decoration: none;">Check our FAQ</a> for more information about our features.</div>
-        <div class="hero-cta">
-            <a href="../contact/" class="cta-button" id="get-notified-btn">Get Notified When Available</a>
+        <div class="hero-description">We're working on flexible pricing plans that will fit your needs. In the meantime, try Logstag free for a month or let us walk you through it in a guided demo. <a href="../faq/" style="color: #203fae; text-decoration: none;">Check our FAQ</a> for more information about our features.</div>
+        <div class="hero-cta hero-cta-group">
+            <a href="../contact/?intent=trial&from=pricing-hero" class="cta-button">Start 1-month free trial</a>
+            <a href="../contact/?intent=demo&from=pricing-hero" class="cta-button cta-button-secondary">Request a guided demo</a>
         </div>
     </div>
 
@@ -113,8 +116,14 @@
                 <a href="../">Home</a>
                 <a href="../faq/">FAQ</a>
                 <a href="../pricing/">Pricing</a>
-                <a href="../contact/">Contact</a>
+                <a href="../contact/?from=pricing-footer">Contact</a>
             </nav>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/logstag" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.producthunt.com/products/logstag" target="_blank" rel="noopener">Product Hunt</a>
+                </div>
 
                 <!-- Separator -->
                 <div class="footer-separator"></div>
@@ -136,30 +145,5 @@
 
     <script src="../analytics.js"></script>
     <script src="../script.js"></script>
-    <script>
-        // Handle Get Notified button click
-        document.addEventListener('DOMContentLoaded', function() {
-            const getNotifiedBtn = document.getElementById('get-notified-btn');
-            if (getNotifiedBtn) {
-                getNotifiedBtn.addEventListener('click', function(e) {
-                    // Add notify parameter to URL
-                    const url = new URL(this.href);
-                    url.searchParams.set('notify', 'true');
-                    this.href = url.toString();
-                });
-            }
-            
-            // Handle Book a Demo button click
-            const bookDemoBtn = document.getElementById('book-demo-btn');
-            if (bookDemoBtn) {
-                bookDemoBtn.addEventListener('click', function(e) {
-                    // Add notify parameter to URL
-                    const url = new URL(this.href, window.location.origin);
-                    url.searchParams.set('notify', 'true');
-                    this.href = url.toString();
-                });
-            }
-        });
-    </script>
 </body>
 </html>

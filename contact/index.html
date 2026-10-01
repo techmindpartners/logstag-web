@@ -76,12 +76,14 @@
                         <li><a href="../" class="nav-link">Home</a></li>
                         <li><a href="../faq/" class="nav-link">FAQ</a></li>
                         <li><a href="../pricing/" class="nav-link">Pricing</a></li>
-                        <li><a href="../contact/" class="nav-link active">Contact</a></li>
+                        <li><a href="../contact/?from=contact-nav" class="nav-link active">Contact</a></li>
+                        <li><a href="https://docs.logstag.com" class="nav-link">Docs</a></li>
+                        <li><a href="https://app.logstag.com" class="nav-link">Sign in</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-buttons">
-                    <a href="../contact/" class="nav-book" id="book-demo-btn">Book a Demo</a>
+                    <a href="../contact/?intent=demo&from=contact-nav" class="nav-book" id="book-demo-btn">Request a guided demo</a>
                 </div>
 
                 <div class="nav-toggle" id="nav-toggle">
@@ -174,8 +176,14 @@
                 <a href="../">Home</a>
                 <a href="../faq/">FAQ</a>
                 <a href="../pricing/">Pricing</a>
-                <a href="../contact/">Contact</a>
+                <a href="../contact/?from=contact-footer">Contact</a>
             </nav>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/logstag" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/techmindpartners/logstag-agent-dist" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.producthunt.com/products/logstag" target="_blank" rel="noopener">Product Hunt</a>
+                </div>
 
             <!-- Separator -->
             <div class="footer-separator"></div>
@@ -194,8 +202,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" 
-            onerror="console.warn('Calendly widget failed to load')"></script>
     <script src="../analytics.js"></script>
     <script src="../script.js"></script>
     <script>
@@ -307,54 +313,9 @@
             }
         });
 
-        // Initialize Calendly widget for contact page with error handling
-        let calendlyRetryCount = 0;
-        const maxRetries = 50; // 5 seconds max wait time
-        
-        const initCalendly = () => {
-            try {
-                if (window.Calendly) {
-                    Calendly.initInlineWidget({
-                        url: 'https://calendly.com/d/csgx-yt6-262/30-min-meeting',
-                        parentElement: document.querySelector('.calendly-widget'),
-                        prefill: {},
-                        utm: {}
-                    });
-                } else if (calendlyRetryCount < maxRetries) {
-                    calendlyRetryCount++;
-                    setTimeout(initCalendly, 100);
-                } else {
-                    // Show fallback if Calendly fails to load after max retries
-                    console.warn('Calendly failed to load after maximum retries');
-                    const fallback = document.querySelector('.calendly-fallback');
-                    if (fallback) {
-                        fallback.style.display = 'block';
-                    }
-                }
-            } catch (error) {
-                console.warn('Calendly initialization failed:', error);
-                // Show fallback if Calendly fails to load
-                const fallback = document.querySelector('.calendly-fallback');
-                if (fallback) {
-                    fallback.style.display = 'block';
-                }
-            }
-        };
-        
-        // Handle Book a Demo button click
-        const bookDemoBtn = document.getElementById('book-demo-btn');
-        if (bookDemoBtn) {
-            bookDemoBtn.addEventListener('click', function(e) {
-                // Add notify parameter to URL
-                const url = new URL(this.href, window.location.origin);
-                url.searchParams.set('notify', 'true');
-                this.href = url.toString();
-            });
-        }
-        
-        // Check if we came from pricing page and focus on name input
+        // Came from a CTA: scroll to the form and focus the name input
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('notify') === 'true') {
+        if (urlParams.has('intent')) {
             // Scroll to the form section
             const formContainer = document.querySelector('.contact-form-container');
             if (formContainer) {
